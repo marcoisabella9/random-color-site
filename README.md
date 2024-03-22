@@ -1,2 +1,3 @@
 # random color site
- learning js and css
+# learning js and css
+# :)
