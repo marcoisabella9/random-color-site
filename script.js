@@ -1,26 +1,31 @@
 var root = document.querySelector(':root');
 var rootStyles = getComputedStyle(root);
 var backColor = rootStyles.getPropertyValue('--backColor');
-let colorChoice = '';
 
-function getNum() {
-    return Math.floor(Math.random() * 3 + 1);
+let colors = ['red', 'blue', 'green'];
+let numColors = colors.length;
+
+let header = document.getElementById('colorText');
+
+function getColor() {
+    var num = Math.floor(Math.random() * numColors);
+    
+    return colors[num];
 }
 
-switch(getNum()) {
-    case 1:
-        colorChoice = 'green';
-        break;
-    case 2:
-        colorChoice = 'red';
-        break;
-    case 3:
-        colorChoice = 'purple';
-        break;
-    default:
-        colorChoice = 'white';
+let chosenColor = getColor();
+
+header.innerHTML = "Current Color is " + chosenColor;
+
+root.style.setProperty('--backColor', chosenColor);
+console.log('Background Color: ', chosenColor);
+
+var newColor = '';
+
+function colorChange(newColor) {
+    header.innerHTML = "Current Color is " + newColor;
+    root.style.setProperty('--backColor', newColor);
+    console.log('New Background Color: ', newColor);
 }
 
-
-root.style.setProperty('--backColor', colorChoice);
-console.log('Background Color: ', colorChoice);
+var inputText = document.getElementById('inputText');

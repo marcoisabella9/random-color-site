@@ -5,3 +5,12 @@
 body{
     background-color: var(--backColor);
 }
+
+#updateColor {
+    height: 36px;
+    width: 64px;
+}
+
+input {
+    height: 36px;
+}
