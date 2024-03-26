@@ -24,21 +24,42 @@ console.log('Background Color: ', chosenColor);
 var newColor = '';
 const acceptableColors = ['aliceblue','antiquewhite','aqua','aquamarine','azure','beige','bisque','black','blanchedalmond','blue','blueviolet','brown','burlywood','cadetblue','chartreuse','chocolate','coral','cornflowerblue','cornsilk','crimson','cyan','darkblue','darkcyan','darkgoldenrod','darkgray','darkgreen','darkkhaki','darkmagenta','darkolivegreen','darkorange','darkorchid','darkred','darksalmon','darkseagreen','darkslateblue','darkslategray','darkturquoise','darkviolet','deeppink','deepskyblue','dimgray','dodgerblue','firebrick','floralwhite','forestgreen','fuchsia','gainsboro','ghostwhite','gold','goldenrod','gray','green','greenyellow','honeydew','hotpink','indianred','indigo','ivory','khaki','lavender','lavenderblush','lawngreen','lemonchiffon','lightblue','lightcoral','lightcyan','lightgoldenrodyellow','lightgreen','lightgrey','lightpink','lightsalmon','lightseagreen','lightskyblue','lightslategray','lightsteelblue','lightyellow','lime','limegreen','linen','magenta','maroon','mediumaquamarine','mediumblue','mediumorchid','mediumpurple','mediumseagreen','mediumslateblue','mediumspringgreen','mediumturquoise','mediumvioletred','midnightblue','mintcream','mistyrose','moccasin','navajowhite','navy','navyblue','oldlace','olive','olivedrab','orange','orangered','orchid','palegoldenrod','palegreen','paleturquoise','palevioletred','papayawhip','peachpuff','peru','pink','plum','powderblue','purple','red','rosybrown','royalblue','saddlebrown','salmon','sandybrown','seagreen','seashell','sienna','silver','skyblue','slateblue','slategray','snow','springgreen','steelblue','tan','teal','thistle','tomato','turquoise','violet','wheat','white','whitesmoke','yellow','yellowgreen'];
 
+function showImage(src, width, height, alt) {
+    var img = document.createElement('img');
+    img.src = src;
+    img.width = width;
+    img.height = height;
+    img.alt = alt;
+
+    document.body.appendChild(img);
+}
+
 function colorChange(newColor) { //repeating above steps every time user wants
-    if (acceptableColors.includes(newColor)) {
-        root.style.setProperty('--backColor', newColor);
+    if (acceptableColors.includes(newColor.toLowerCase())) {
+        root.style.setProperty('--backColor', newColor.toLowerCase());
         header.innerHTML = "Current Color is " + newColor;
         
         //if background color is black change text color to white
-        if (newColor == 'black') {
+        if (newColor.toLowerCase() == 'black') {
             root.style.setProperty('--colorText', 'white');
             console.log('text color changed to white');
             console.log('New Background Color: ', newColor);
         }
     }
-    else if (newColor == 'marco' || newColor == 'josh' || newColor == 'san') { //Easter Egg :)
-        console.log('YOU FOUND THE EASTER EGG!');
-        header.innerHTML = 'YOU FOUND THE EASTER EGG!';
+    else if (newColor.toLowerCase() == 'marco') { //Easter Eggs:)
+        console.log('YOU FOUND AN EASTER EGG! (1/3)');
+        header.innerHTML = 'YOU FOUND AN EASTER EGG! (1/3)';
+        showImage('images/HARD.jpg', 500, 300, 'marqito goat');
+    }
+    else if (newColor.toLowerCase() == 'josh') {
+        console.log('YOU FOUND AN EASTER EGG! (2/3)');
+        header.innerHTML = 'YOU FOUND AN EASTER EGG (2/3)';
+        showImage('images/FullSizeRender.jpg', 500, 300, 'joshie');
+    }
+    else if (newColor.toLowerCase() == 'san') {
+        console.log('YOU FOUND AN EASTER EGG! (3/3)');
+        header.innerHTML = 'YOU FOUND AN EASTER EGG! (3/3)';
+        showImage('images/eugene.jpg', 300, 500, 'san');
     }
     else {
         console.log(newColor + " is not an accepted color, check 'All Colors'.");
