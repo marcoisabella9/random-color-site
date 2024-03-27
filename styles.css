@@ -1,10 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
 :root {
     --backColor: white
     --colorText: black
 }
 
-body{
+body {
     background-color: var(--backColor);
+    font-family: "Outfit", sans-serif;
+    font-size: 15px;
+    min-height: 100vh;
 }
 
 #colorText {
@@ -20,8 +25,9 @@ body{
     width: 64px;
 }
 
-input {
+#inputText {
     height: 36px;
+    border-radius: 12px;
 }
 
 a.button {
@@ -30,4 +36,25 @@ a.button {
     border-radius: 3px;
     color: black;
     background-color: rgb(236, 236, 236);
+}
+
+.container {
+    max-width: 360px;
+    margin: 0 auto;
+}
+
+.card img{
+    width: 100%;
+    border-radius: 12px;
+}
+
+.attribution {
+    font-size: 11px; 
+    color: var(--colorText);
+    position: fixed;
+    bottom: 0;
+    padding: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
 }

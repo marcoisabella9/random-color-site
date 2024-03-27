@@ -1,6 +1,8 @@
 var root = document.querySelector(':root'); //declare root from styles
 var rootStyles = getComputedStyle(root); //get styles from root
 
+var card = document.querySelector('.container .card');
+
 //get values of style variables
 var backColor = rootStyles.getPropertyValue('--backColor');
 var colorText = rootStyles.getPropertyValue('--colorText');
@@ -31,14 +33,27 @@ const acceptableColors = ['aliceblue','antiquewhite','aqua','aquamarine','azure'
 
 //function to create a new element of an image
 function showImage(src, width, height, alt) {
+    if (eggCompletion > 0) {
+        try {
+            document.body.removeChild(img);
+        }
+        catch {
+
+        }
+    }
     var img = document.createElement('img');
     img.src = src;
     img.width = width;
     img.height = height;
     img.alt = alt;
 
-    document.body.appendChild(img);
+    card.appendChild(img);
 }
+
+var marCompletion = false;
+var joshCompletion = false;
+var sanCompletion = false;
+
 
 function colorChange(newColor) { //repeating above steps every time user wants
     if (acceptableColors.includes(newColor.toLowerCase())) {
@@ -51,24 +66,29 @@ function colorChange(newColor) { //repeating above steps every time user wants
             console.log('text color changed to white');
             console.log('New Background Color: ', newColor);
         }
+        else if (newColor.toLowerCase() == 'white') {
+            root.style.setProperty('--colorText', 'black');
+            console.log('text color changed to black');
+            console.log('New Background Color: ', newColor);
+        }
     }
     else if (newColor.toLowerCase() == 'marco') { //Easter Eggs:)
-        if (eggCompletion < 3)
-            eggCompletion++;
+        if (eggCompletion < 3 && marCompletion == false)
+            eggCompletion++; marCompletion = true;
         console.log('YOU FOUND AN EASTER EGG! (' + eggCompletion + '/3)');
         header.innerHTML = 'YOU FOUND AN EASTER EGG! (' + eggCompletion + '/3)';
         showImage('images/HARD.jpg', 500, 300, 'marqito goat');
     }
     else if (newColor.toLowerCase() == 'josh') {
-        if (eggCompletion < 3)
-            eggCompletion++;
+        if (eggCompletion < 3 && joshCompletion == false)
+            eggCompletion++; joshCompletion = true;
         console.log('YOU FOUND AN EASTER EGG! (' + eggCompletion + '/3)');
         header.innerHTML = 'YOU FOUND AN EASTER EGG! (' + eggCompletion + '/3)';
         showImage('images/FullSizeRender.jpg', 500, 300, 'joshie');
     }
     else if (newColor.toLowerCase() == 'san') {
-        if (eggCompletion < 3)
-            eggCompletion++;
+        if (eggCompletion < 3 && sanCompletion == false)
+            eggCompletion++; sanCompletion = true;
         console.log('YOU FOUND AN EASTER EGG! (' + eggCompletion + '/3)');
         header.innerHTML = 'YOU FOUND AN EASTER EGG! (' + eggCompletion + '/3)';
         showImage('images/eugene.jpg', 300, 500, 'san');
