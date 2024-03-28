@@ -30,6 +30,15 @@ body {
     border-radius: 12px;
 }
 
+.centerBlock {
+    border-color: var(--colorText);
+    align-items: center;
+    border: 5px;
+    border-radius: 17px;
+    text-align: center;
+    margin: 0 1em;
+}
+
 a.button {
     padding: 1px 6px;
     border: 1px outset;

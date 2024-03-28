@@ -73,25 +73,31 @@ function colorChange(newColor) { //repeating above steps every time user wants
         }
     }
     else if (newColor.toLowerCase() == 'marco') { //Easter Eggs:)
-        if (eggCompletion < 3 && marCompletion == false)
-            eggCompletion++; marCompletion = true;
-        console.log('YOU FOUND AN EASTER EGG! (' + eggCompletion + '/3)');
-        header.innerHTML = 'YOU FOUND AN EASTER EGG! (' + eggCompletion + '/3)';
-        showImage('images/HARD.jpg', 500, 300, 'marqito goat');
+        if (eggCompletion < 3 && marCompletion == false) {
+            eggCompletion++;
+            marCompletion = true;
+            showImage('images/HARD.jpg', 500, 300, 'marqito goat');
+            console.log('YOU FOUND AN EASTER EGG! (' + eggCompletion + '/3)');
+            header.innerHTML = 'YOU FOUND AN EASTER EGG! (' + eggCompletion + '/3)';
+        }
     }
     else if (newColor.toLowerCase() == 'josh') {
-        if (eggCompletion < 3 && joshCompletion == false)
-            eggCompletion++; joshCompletion = true;
-        console.log('YOU FOUND AN EASTER EGG! (' + eggCompletion + '/3)');
-        header.innerHTML = 'YOU FOUND AN EASTER EGG! (' + eggCompletion + '/3)';
-        showImage('images/FullSizeRender.jpg', 500, 300, 'joshie');
+        if (eggCompletion < 3 && joshCompletion == false) {
+            eggCompletion++;
+            joshCompletion = true;
+            showImage('images/FullSizeRender.jpg', 500, 300, 'joshie');
+            console.log('YOU FOUND AN EASTER EGG! (' + eggCompletion + '/3)');
+            header.innerHTML = 'YOU FOUND AN EASTER EGG! (' + eggCompletion + '/3)';
+        }
     }
     else if (newColor.toLowerCase() == 'san') {
-        if (eggCompletion < 3 && sanCompletion == false)
-            eggCompletion++; sanCompletion = true;
-        console.log('YOU FOUND AN EASTER EGG! (' + eggCompletion + '/3)');
-        header.innerHTML = 'YOU FOUND AN EASTER EGG! (' + eggCompletion + '/3)';
-        showImage('images/eugene.jpg', 300, 500, 'san');
+        if (eggCompletion < 3 && sanCompletion == false) {
+            eggCompletion++;
+            sanCompletion = true;
+            console.log('YOU FOUND AN EASTER EGG! (' + eggCompletion + '/3)');
+            header.innerHTML = 'YOU FOUND AN EASTER EGG! (' + eggCompletion + '/3)';
+            showImage('images/eugene.jpg', 300, 500, 'san');
+        }
     }
     else {
         console.log(newColor + " is not an accepted color, check 'All Colors'.");
