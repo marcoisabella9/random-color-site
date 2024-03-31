@@ -1,3 +1,12 @@
-# random color site
-# learning js and css
-# :)
+# Self Motivated Learning Based Project
+<br><br>
+The purpose of this project was to translate my current skills in languages such as C++, Python, Java, etc. to HTML, JavaScript and CSS to learn basic frontend development.
+<br><br>
+<h2>1. The Idea</h2>
+Beginning a new project is a tough endeavor. Looking to find somewhere to begin I wanted to focus my efforts on replicating something I could find online. I discovered <a href="https://randomcolour.com/">this site</a> which just displays a random color on every refresh and thought it would be a great way to learn basic CSS and HTML. I quickly put together a basic version which worked fine, but I quickly found myself wanting to iterate upon it to take my learning experience further (All of these changes can be observed through the many commits in the repository).
+<br><br>
+<h2>2. Iteration</h2>
+A big point of my learning being to be able to take advantage of JavaScript, I decided a good way to add some basic intractability to the page would be to allow the user to enter a color they wanted and to have the background change to reflect their choice. This led me to learning about input boxes and buttons, both of which I utilized for the user to enter a new color. The color change itself also presented a learning opportunity, as I had to understand how to create and translate variables between JavaScript and CSS and how to have those variables connect with the HTML. I then realized the user had no way to know which colors would be accepted which led me to create my own link to a page showing all their options, which I had to stylize to look similar to the other button to maintain a consistent theme for the page. All of this of course led to some unintended bugs, such as when the user made the page black, they could no longer read the letters, or that it would not accept colors spelled with uppercase letters. These basic bugs allowed me to go back through the entirety of my code through a new lens and encouraged me to tidy it up and add some much needed documentation. Finally I knew I wanted to work with images in some small capacity, so I added a small easter egg where when you type in either my or one of a few of my friends names, a simple styled image will appear along with a number counter to give the user some feedback.
+<br><br>
+<h2>3. Reflection</h2>
+Something I wasn't expecting was for this endeavor to teach me so much about Git, repositories, and how to utilize GitHub. Being able to create and edit a repository is something that is necessary for any software project and this experience has given me a basic rundown of all the most important parts. I not only gained valuable experience in HTML, JavaScript, and CSS, but went through the rough process of being able to distribute my own software, which will be invaluable in the future!
