@@ -1,7 +1,7 @@
 var root = document.querySelector(':root'); //declare root from styles
 var rootStyles = getComputedStyle(root); //get styles from root
 
-var card = document.querySelector('.container .card');
+var card = document.querySelector('.container .card'); //get card class from html
 
 //get values of style variables
 var backColor = rootStyles.getPropertyValue('--backColor');
@@ -29,6 +29,8 @@ root.style.setProperty('--backColor', chosenColor); //setting background to chos
 console.log('Background Color: ', chosenColor); 
 
 var newColor = '';
+
+//table filled with all acceptable color values, this is referenced when validating user input
 const acceptableColors = ['aliceblue','antiquewhite','aqua','aquamarine','azure','beige','bisque','black','blanchedalmond','blue','blueviolet','brown','burlywood','cadetblue','chartreuse','chocolate','coral','cornflowerblue','cornsilk','crimson','cyan','darkblue','darkcyan','darkgoldenrod','darkgray','darkgreen','darkkhaki','darkmagenta','darkolivegreen','darkorange','darkorchid','darkred','darksalmon','darkseagreen','darkslateblue','darkslategray','darkturquoise','darkviolet','deeppink','deepskyblue','dimgray','dodgerblue','firebrick','floralwhite','forestgreen','fuchsia','gainsboro','ghostwhite','gold','goldenrod','gray','green','greenyellow','honeydew','hotpink','indianred','indigo','ivory','khaki','lavender','lavenderblush','lawngreen','lemonchiffon','lightblue','lightcoral','lightcyan','lightgoldenrodyellow','lightgreen','lightgrey','lightpink','lightsalmon','lightseagreen','lightskyblue','lightslategray','lightsteelblue','lightyellow','lime','limegreen','linen','magenta','maroon','mediumaquamarine','mediumblue','mediumorchid','mediumpurple','mediumseagreen','mediumslateblue','mediumspringgreen','mediumturquoise','mediumvioletred','midnightblue','mintcream','mistyrose','moccasin','navajowhite','navy','navyblue','oldlace','olive','olivedrab','orange','orangered','orchid','palegoldenrod','palegreen','paleturquoise','palevioletred','papayawhip','peachpuff','peru','pink','plum','powderblue','purple','red','rosybrown','royalblue','saddlebrown','salmon','sandybrown','seagreen','seashell','sienna','silver','skyblue','slateblue','slategray','snow','springgreen','steelblue','tan','teal','thistle','tomato','turquoise','violet','wheat','white','whitesmoke','yellow','yellowgreen'];
 
 //function to create a new element of an image
@@ -50,17 +52,18 @@ function showImage(src, width, height, alt) {
     card.appendChild(img);
 }
 
+//variables keeping track of individual easter egg completions
 var marCompletion = false;
 var joshCompletion = false;
 var sanCompletion = false;
 
 
-function colorChange(newColor) { //repeating above steps every time user wants
+function colorChange(newColor) { //repeating above steps every time user inputs a new color
     if (acceptableColors.includes(newColor.toLowerCase())) {
         root.style.setProperty('--backColor', newColor.toLowerCase());
         header.innerHTML = "Current Color is " + newColor;
         
-        //if background color is black change text color to white
+        //if background color is black change text color to white, and vice versa
         if (newColor.toLowerCase() == 'black') {
             root.style.setProperty('--colorText', 'white');
             console.log('text color changed to white');
@@ -73,7 +76,7 @@ function colorChange(newColor) { //repeating above steps every time user wants
         }
     }
     else if (newColor.toLowerCase() == 'marco') { //Easter Eggs:)
-        if (eggCompletion < 3 && marCompletion == false) {
+        if (eggCompletion < 3 && marCompletion == false) { //checks conditions on whether to add to the completion, as to not count duplicate completions, or go over total possible completions
             eggCompletion++;
             marCompletion = true;
             showImage('images/HARD.jpg', 500, 300, 'marqito goat');

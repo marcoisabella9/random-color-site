@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 
-:root {
+:root { /*creates css variables with default values that will change based on user input, fundamental for this project*/
     --backColor: white
     --colorText: black
 }
 
 body {
-    background-color: var(--backColor);
+    background-color: var(--backColor); /*makes the body background color the --backColor variable, as it will change frequently*/
     font-family: "Outfit", sans-serif;
     font-size: 15px;
     min-height: 100vh;
@@ -30,7 +30,7 @@ body {
     border-radius: 12px;
 }
 
-.centerBlock {
+.centerBlock { /*centers the control panel, specifically those objects under class centerBlock*/
     border-color: var(--colorText);
     align-items: center;
     border: 5px;
@@ -40,7 +40,7 @@ body {
     padding-bottom: 10px;
 }
 
-a.button {
+a.button { /*makes the link with class button look similar to the other button for consistency*/
     padding: 1px 6px;
     border: 1px outset;
     border-radius: 3px;
@@ -48,7 +48,7 @@ a.button {
     background-color: rgb(236, 236, 236);
 }
 
-.container {
+.container { /*contains space where image will appear*/
     max-width: 360px;
     margin: 0 auto;
 }
@@ -58,7 +58,7 @@ a.button {
     border-radius: 12px;
 }
 
-.attribution {
+.attribution { /*sticks attribution to the bottom of the page so it is visible when scrolling, neccessary after images appear*/
     font-size: 11px; 
     color: var(--colorText);
     position: fixed;
